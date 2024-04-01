@@ -1,3 +1,3 @@
 export * from './types';
 
-export * from './routes/ListTickets';
+export * from './routes/Tickets';

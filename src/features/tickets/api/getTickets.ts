@@ -17,7 +17,7 @@ type UseTicketsOptions = {
 export const useTickets = ({ config }: UseTicketsOptions = {}) => {
   return useQuery<ExtractFnReturnType<QueryFnType>>({
     ...config,
-    queryKey: ['users'],
+    queryKey: ['tickets'],
     queryFn: () => getTickets(),
   });
 };

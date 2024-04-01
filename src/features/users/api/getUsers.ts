@@ -1,12 +1,15 @@
 import { useQuery } from 'react-query';
 
+import { authApi } from '@/features/auth';
 import { axios } from '@/lib/axios';
 import { ExtractFnReturnType, QueryConfig } from '@/lib/react-query';
 
 import { User } from '../types';
-
-export const getUsers = (): Promise<User[]> => {
-  return axios.get(`/users`);
+type GetUserResponse = {
+  results: User[];
+};
+export const getUsers = (): Promise<GetUserResponse> => {
+  return axios.get(`${authApi}/admin/users`);
 };
 
 type QueryFnType = typeof getUsers;

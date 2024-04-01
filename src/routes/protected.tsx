@@ -6,7 +6,6 @@ import { MainLayout } from '@/components/Layout';
 import { lazyImport } from '@/utils/lazyImport';
 
 const { Profile } = lazyImport(() => import('@/features/users'), 'Profile');
-const { Users } = lazyImport(() => import('@/features/users'), 'Users');
 const { Tickets } = lazyImport(() => import('@/features/tickets'), 'Tickets');
 
 const App = () => {
@@ -30,7 +29,6 @@ export const protectedRoutes = [
     path: '/app',
     element: <App />,
     children: [
-      { path: '/users', element: <Users /> },
       { path: '/profile', element: <Profile /> },
       { path: '/', element: <Tickets /> },
       { path: '*', element: <Navigate to="." /> },

@@ -18,3 +18,8 @@ export type Ticket = {
   attachments: Attachment[];
   ticketId: string;
 } & BaseEntity;
+export type Site = {
+  id: string;
+  name: string;
+  thumbnail: string;
+};
